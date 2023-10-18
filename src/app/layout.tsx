@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Saira } from 'next/font/google'
 import './globals.css'
-import Header from './components/header/header'
+import Header from '../components/header/header'
 
 const saira = Saira({ 
   subsets: ['latin'],
