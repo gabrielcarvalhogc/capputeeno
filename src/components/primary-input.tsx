@@ -16,7 +16,6 @@ const PrimaryInput = styled.input`
   line-height: 22px;
   color: var(--text-dark);
 `
-//Criando input com Searchicon
 const InputContainer = styled.div`
   position: relative;
   width: 352px; 
@@ -28,16 +27,15 @@ const InputContainer = styled.div`
     transform: translateY(-50%);
   }
 `
-//O width deve ter o mesmo tamanho do input para facilitar o position
-//o top e o tranform são para posicionar o icon no centro do input
-
-//Adicionando um tipo input ao PrimaryInput
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  value: string,
+  handleChange: (value: string) => void
+}
 
 export function PrimaryInputWithSearchIcon(props: InputProps) {
   return (
     <InputContainer>
-      <PrimaryInput {...props}/>
+      <PrimaryInput onChange={(event) => props.handleChange(event.target.value)} {...props}/>
       <SearchIcon/>
     </InputContainer>
   )
