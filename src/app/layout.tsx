@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import { Saira } from 'next/font/google'
 import './globals.css'
 import Header from '../components/header/header'
+import { FilterContextProvider } from '@/contexts/filter-context'
 
-const saira = Saira({ 
+const saira = Saira({
   subsets: ['latin'],
-  weight: ['300', '400', '500','600']
+  weight: ['300', '400', '500', '600']
 })
 
 export const metadata: Metadata = {
@@ -19,10 +20,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={saira.className}>
-        <Header />
-        {children}
+        <FilterContextProvider>
+          <Header />
+          {children}
+        </FilterContextProvider>
       </body>
     </html>
   )
