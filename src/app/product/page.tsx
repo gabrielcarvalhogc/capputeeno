@@ -106,7 +106,7 @@ export default function Product({ searchParams }: { searchParams: { id: string }
   const { data } = useProduct(searchParams.id)
 
   const handleAddToCart = () => {
-    let cartItems = localStorage.getItem('caat-items');
+    let cartItems = localStorage.getItem('cart-items'); //possivel erro de escrita
     if(cartItems) {
       let cartItemsArray = JSON.parse(cartItems);
 

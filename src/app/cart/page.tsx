@@ -72,13 +72,13 @@ const CartResultContainer = styled.div`
   }
 `
 
-const TotalItem = styled.div<{isBold: boolean}>`
+const TotalItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 
-  font-weight: ${props => props.isBold ? '600' : '400'};
+  font-weight: 600;
   font-size: 16px;
   line-height: 150%;
   margin-botton: 12px;
@@ -144,16 +144,16 @@ export default function CartPage() {
         </CartListContainer>
         <CartResultContainer>
           <h3>Resumo do pedido</h3>
-          <TotalItem isBold={false}>
+          <TotalItem>
             <p>Subtotal de produtos</p>
             <p>{cartTotal}</p>
           </TotalItem>
-          <TotalItem isBold={false}>
+          <TotalItem>
             <p>Entrega</p>
             <p>{formatPrice(deliveryFee)}</p>
           </TotalItem>
           <Divider/>
-          <TotalItem isBold>
+          <TotalItem>
             <p>Total</p>
             <p>{caartTotalWithDelivery}</p>
           </TotalItem>
