@@ -3,6 +3,7 @@
 import { BackBtn } from "@/components/back-button"
 import { DefaultPageLayout } from "@/components/default-page-layout"
 import { ShopBagIcon } from "@/components/icons/shopping-bag-icon"
+import { CartProvider, useCartContext } from "@/contexts/cart-context"
 import { useProduct } from "@/hooks/useProduct"
 import { formatPrice } from "@/utils/format-price"
 import styled from "styled-components"
@@ -103,10 +104,11 @@ const ProductInfo = styled.div`
 `
 
 export default function Product({ searchParams }: { searchParams: { id: string }}) {
-  const { data } = useProduct(searchParams.id)
+  const { data } = useProduct(searchParams.id);
+  const { updateCartLength } = useCartContext();
 
   const handleAddToCart = () => {
-    let cartItems = localStorage.getItem('cart-items'); //possivel erro de escrita
+    let cartItems = localStorage.getItem('cart-items');
     if(cartItems) {
       let cartItemsArray = JSON.parse(cartItems);
 
@@ -119,9 +121,11 @@ export default function Product({ searchParams }: { searchParams: { id: string }
       }
 
       localStorage.setItem('cart-items', JSON.stringify(cartItemsArray));
+      updateCartLength(cartItemsArray.length);
     } else {
       const newCart = [{...data,quantity: 1, id: searchParams.id}]
       localStorage.setItem('cart-items', JSON.stringify(newCart));
+      updateCartLength(newCart.length);
     }
   }
   return (
