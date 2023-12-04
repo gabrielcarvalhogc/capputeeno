@@ -13,6 +13,6 @@ export interface ProductInCart extends Product {
 
 export interface ProductFetchResponse {
   data: {
-    Product: Product
+    getProduct: Product
   }
 }

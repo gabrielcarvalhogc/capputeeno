@@ -1,6 +1,5 @@
 "use client"
 
-import { useLocalStorage } from '@/hooks/useLocalStorage';
 import React, { ReactNode, createContext, useContext, useEffect, useState } from 'react';
 
 interface CartContextProps {
@@ -31,7 +30,6 @@ export const CartProvider = ({ children, initialCartLength = 0 }: CartProviderPr
   };
 
   useEffect(() => {
-    // Recuperar os itens do carrinho do localStorage e atualizar o comprimento do carrinho
     const cartItems = JSON.parse(localStorage.getItem('cart-items') || '[]') as number[];
     setCartLength(cartItems.length);
   }, []);

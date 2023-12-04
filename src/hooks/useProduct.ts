@@ -7,7 +7,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 const fetcher = (productId: string): AxiosPromise<ProductFetchResponse> => {
   return axios.post(API_URL,{ query: `
   query {  
-    Product (id: "${productId}"){
+    getProduct (id: "${productId}"){
       name
       description
       category
@@ -27,6 +27,6 @@ export function useProduct(id: string) {
   });
 
   return {
-    data: data?.data?.data?.Product
+    data: data?.data?.data?.getProduct
   }
 }
