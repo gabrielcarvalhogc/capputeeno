@@ -7,8 +7,14 @@ import { FilterByPriority } from "./filter-by-priority";
 const FilterContainer = styled.div`
   display: flex;
   width: 100%;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+
+  @media (min-width:  ${props => props.theme.tabletBreakpoint}) {
+    flex-direction: row;
+  }
 `
 
 export function FilterBar() {

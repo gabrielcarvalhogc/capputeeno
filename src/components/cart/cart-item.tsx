@@ -23,7 +23,7 @@ const Item = styled.li`
   button {
     position: absolute;
     top: 16px;
-    right: 24px;
+    right: 0px;
     border: none;
     background: transparent;
     cursor: pointer;
@@ -31,7 +31,7 @@ const Item = styled.li`
 
   img {
     max-height: 100%;
-    width: 256px;
+    width: 200px;
     border-radius: 8px 0 0 8px;
   }
 
@@ -42,9 +42,13 @@ const Item = styled.li`
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-    padding: 16px 24px;
+    padding: 16px 10px;
     line-height: 150%;
     color: var(--text-dark-2);
+
+    @media (min-width:  ${props => props.theme.tabletBreakpoint}) {
+      padding: 16px 24px;
+    }
 
     h4 {
       font-weight: 300;

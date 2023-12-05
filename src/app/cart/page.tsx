@@ -58,9 +58,9 @@ const CartResultContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  min-width: 352px;
+  min-width: 300px;
   background: white;
-  padding: 16px 24px;
+  padding: 16px 0px;
   height: 100%;
 
   h3 {

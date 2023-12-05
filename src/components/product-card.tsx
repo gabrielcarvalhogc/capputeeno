@@ -25,6 +25,7 @@ const Card = styled.div`
   img {
     width: 256px;
     height: 300px;
+    max-width: 100%;
   }
 
   h3 {

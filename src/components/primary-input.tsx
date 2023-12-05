@@ -35,6 +35,14 @@ const InputContainer = styled.div`
   @media (min-width:  ${props => props.theme.desktopBreakpoint}) {
     width: 352px;
   }
+
+  @media (max-width: ${props => props.theme.mobileBreakpoint}) {
+    width: 148px;
+
+    svg {
+      display: none;
+    }
+  }
 `
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string;

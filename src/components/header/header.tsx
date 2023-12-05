@@ -32,8 +32,8 @@ const TagHeader = styled.header`
 const Logo = styled.a`
   color: var(--logo-color);
   font-weight: 400;
-  font-size: 20px;
-  line-height: 150%;
+  font-size: 18px;
+  line-height: 200%;
 
   @media (min-width:  ${props => props.theme.tabletBreakpoint}) {
     font-size: 24px;

@@ -16,13 +16,19 @@ const Container = styled.div`
 
   section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     width: 100%;
     gap: 32px;
     margin-top: 24px;
 
+    @media (min-width:  ${props => props.theme.tabletBreakpoint}) {
+      flex-direction: row;
+    }
+
     img {
       max-width: 640px;
+      margin: 0 auto;
       width: 50%;
     }
 
@@ -43,6 +49,7 @@ const Container = styled.div`
         font-weight: 500;
         font-size: 16px;
         text-transform: uppercase;
+        margin-top: 10px;
 
         display: flex;
         align-items: center;
